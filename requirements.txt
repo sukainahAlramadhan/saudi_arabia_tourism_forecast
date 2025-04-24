@@ -1,0 +1,10 @@
+pandas
+numpy=1.24.4
+matplotlib
+seaborn
+scikit-learn
+statsmodels
+pmdarima
+prophet
+darts
+jupyter
