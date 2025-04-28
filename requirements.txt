@@ -1,5 +1,6 @@
+u8darts
 pandas
-numpy=1.24.4
+numpy==1.24.4
 matplotlib
 seaborn
 scikit-learn
@@ -8,3 +9,10 @@ pmdarima
 prophet
 darts
 jupyter
+fastapi         # API framework
+pytz            # time zone management
+uvicorn         # web server
+# tests
+httpx           # HTTP client
+pytest-asyncio  # asynchronous I/O support for pytest
+hijri_converter
