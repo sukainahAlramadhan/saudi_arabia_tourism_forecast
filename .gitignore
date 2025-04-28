@@ -23,3 +23,9 @@ rad.json
 *.flf
 #Test results file
 TestResults.xmlraw_data/
+
+#new
+.env
+.env.yaml
+
+*.ipynb
