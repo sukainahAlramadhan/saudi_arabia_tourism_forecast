@@ -20,10 +20,10 @@ def predict(
         year: str,  # 2014-07-06
     ):
 
-    model1 = load_model('/home/sukainah/code/sukainahAlramadhan/saudi_arabia_tourism_forecast/saudi_tourism/models/prophet_number_of_visitors.pkl') #renamae to demostic vistor number
-    model2 = load_model('/home/sukainah/code/sukainahAlramadhan/saudi_arabia_tourism_forecast/saudi_tourism/models/prophet_spends.pkl') #renamae to demostic vistor number #5 #rename to demostic spend
-    model3 = load_model('/home/sukainah/code/sukainahAlramadhan/saudi_arabia_tourism_forecast/saudi_tourism/models/AutoTBATS_number_of_visitors.pkl') #renamae to demostic vistor number #5 #rename to inbound visitor number
-    model4 = load_model('/home/sukainah/code/sukainahAlramadhan/saudi_arabia_tourism_forecast/saudi_tourism/models/AutoTBATS_spends.pkl')
+    model1 = load_model('saudi_tourism/models/prophet_number_of_visitors.pkl') #renamae to demostic vistor number
+    model2 = load_model('saudi_tourism/models/prophet_spends.pkl') #renamae to demostic vistor number #5 #rename to demostic spend
+    model3 = load_model('saudi_tourism/models/AutoTBATS_number_of_visitors.pkl') #renamae to demostic vistor number #5 #rename to inbound visitor number
+    model4 = load_model('saudi_tourism/models/AutoTBATS_spends.pkl')
 
     year_clean1 = pd.DataFrame({'ds': [year]}) # '2023-07-01'
     year_clean2 =  int(float(year) - 2024)
