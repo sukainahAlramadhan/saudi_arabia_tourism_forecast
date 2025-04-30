@@ -14,23 +14,23 @@ st.set_page_config(page_title="Tura 2030", layout="centered")
 st.markdown(
     """
     <style>
-    /* Import Poppins font from Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
-    /* Apply Poppins font to the entire page */
-    html, body, .stApp {
-        font-family: 'Poppins', sans-serif;
+    /* Make all text white */
+    html, body, .stApp, h1, h2, h3, h4, h5, h6, p, span, div, label {
+        color: white !important;
     }
 
-    /* Optional: Set font weights for text elements (headers, paragraphs, etc.) */
-    h1, h2, h3, h4, h5, h6 {
-        font-weight: 600; /* Stronger weight for headings */
+    /* Override button text color to black */
+    .stButton>button {
+        color: black !important;
+        background-color: white !important;  /* optional: makes background white */
+        font-weight: bold;
     }
 
-    p, li, .stMarkdown {
-        font-weight: 400; /* Regular weight for text */
+    /* Optional: change hover effect */
+    .stButton>button:hover {
+        background-color: #f0f0f0 !important;
+        color: black !important;
     }
-
     </style>
     """,
     unsafe_allow_html=True
@@ -39,10 +39,36 @@ st.markdown(
 st.markdown(
     """
     <style>
+    /* Make the Get Forecast button black with white text */
+    .stButton > button {
+        background-color: black !important;
+        color: white !important;
+        border: none;
+        padding: 0.5em 1.2em;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    /* Optional: change on hover */
+    .stButton > button:hover {
+        background-color: #333 !important;
+        color: white !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
+st.markdown(
+    """
+    <style>
     /* Change the font size of the label */
     label[for="Enter the year to predict:"] {
         font-size: 20px; /* Change label font size */
         font-weight: 500; /* Optional: Make it bold */
+        color: white;
     }
 
     /* Change the font size of the text input field */
@@ -59,6 +85,8 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+
 # ------------------------------
 # 🖼️ Optional Background Image (local)
 # ------------------------------
@@ -139,11 +167,11 @@ if trigger_forecast:
 
 
             # Update the placeholders with real data
-            dom_vis_placeholder.markdown(f"**🏠 Domestic Visitors:** {int(data['predicted number of domestic visitors']):,} M")
-            dom_spend_placeholder.markdown(f"**💰 Domestic Spending:** {int(data['predicted spending of domestic  visitors']):,} M SAR")
+            dom_vis_placeholder.markdown(f"**🏠 Domestic Visitors:** {int(data['predicted number of domestic visitors']/100):,} M")
+            dom_spend_placeholder.markdown(f"**💰 Domestic Spending:** {int(data['predicted spending of domestic  visitors']/100):,} B SAR")
 
-            inb_vis_placeholder.markdown(f"**✈️ Inbound Visitors:** {int(data['predicted number of inbound visitors']):,} M")
-            inb_spend_placeholder.markdown(f"**🌍 Inbound Spending:** {int(data['predicted spending of inbound visitors']):,} M SAR")
+            inb_vis_placeholder.markdown(f"**✈️ Inbound Visitors:** {int(data['predicted number of inbound visitors']/100):,} M")
+            inb_spend_placeholder.markdown(f"**🌍 Inbound Spending:** {int(data['predicted spending of inbound visitors']/100):,} B SAR")
 
         except requests.exceptions.RequestException as e:
             st.error(f"❌ API request failed: {e}")
