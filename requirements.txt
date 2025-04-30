@@ -1,6 +1,6 @@
 u8darts
 pandas
-numpy==1.24.4
+numpy>=1.26
 matplotlib
 seaborn
 scikit-learn
