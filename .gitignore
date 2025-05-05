@@ -29,3 +29,5 @@ TestResults.xmlraw_data/
 .env.yaml
 
 *.ipynb
+*.pyc
+*.pyc
